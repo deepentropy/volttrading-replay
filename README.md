@@ -1,6 +1,6 @@
 # VoltTrading Replay
 
-Practice reading Level 2 tape like DAS Trader -- free, offline, no account needed.
+Practice reading Level 2 tape like DAS Trader(TM) -- free, offline, no account needed.
 
 VoltTrading Replay is a desktop application that replays full 14-exchange depth market data tick-by-tick. Built for active day traders and scalpers who want to practice tape reading after hours.
 
@@ -42,7 +42,7 @@ New sessions are added regularly.
 
 ## Built For
 
-Traders who use DAS Trader Pro, Sterling Pro, or Takion and want to practice tape reading outside market hours.
+Traders who use DAS Trader Pro(TM), Sterling Trader Pro(TM), or Takion(TM) and want to practice tape reading outside market hours.
 
 ## License
 
