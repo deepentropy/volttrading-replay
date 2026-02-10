@@ -9,7 +9,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="VoltTrading — Modern Tape Reading Replay">
   <meta property="og:description" content="Practice tape reading with real market data. Fast, modern desktop app — free, no account needed.">
-  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:image" content="images/og-image.png">
   <meta property="og:type" content="website">
 
   <link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
@@ -115,7 +115,6 @@
     /* ---- Hero ---- */
     .hero {
       padding: 140px 0 80px;
-      text-align: center;
       position: relative;
       overflow: hidden;
     }
@@ -130,6 +129,33 @@
       background: url('images/hero-bg.jpg') center/cover no-repeat;
       opacity: 0.15;
       pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-screenshot {
+      flex: 1.2;
+      min-width: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-screenshot img {
+      width: 100%;
+      display: block;
     }
 
     .hero-badge {
@@ -148,14 +174,11 @@
     .hero-badge span { color: var(--green); font-weight: 600; }
 
     .hero h1 {
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(28px, 4vw, 48px);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -1.5px;
       margin-bottom: 20px;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .hero h1 .highlight {
@@ -166,17 +189,16 @@
     }
 
     .hero-sub {
-      font-size: 18px;
+      font-size: 16px;
       color: var(--text-muted);
-      max-width: 560px;
-      margin: 0 auto 36px;
+      max-width: 460px;
+      margin: 0 0 32px;
       line-height: 1.6;
     }
 
     .hero-buttons {
       display: flex;
       gap: 12px;
-      justify-content: center;
       flex-wrap: wrap;
       margin-bottom: 16px;
     }
@@ -214,37 +236,6 @@
     .hero-meta {
       font-size: 13px;
       color: var(--text-muted);
-    }
-
-    /* ---- Screenshot ---- */
-    .screenshot-section {
-      padding: 0 0 80px;
-    }
-
-    .screenshot-frame {
-      max-width: 1000px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
-
-    .screenshot-frame img {
-      width: 100%;
-      display: block;
-    }
-
-    .screenshot-placeholder {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: var(--surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 14px;
     }
 
     /* ---- Features ---- */
@@ -314,6 +305,18 @@
       font-size: 14px;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+
+    .feature-img {
+      margin-top: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .feature-img img {
+      width: 100%;
+      display: block;
     }
 
     /* ---- How It Works ---- */
@@ -491,6 +494,14 @@
 
     /* ---- Responsive ---- */
     @media (max-width: 768px) {
+      .hero-inner {
+      position: relative;
+      z-index: 1; flex-direction: column; }
+      .hero-text { text-align: center; }
+      .hero-sub { margin: 0 auto 32px; }
+      .hero-buttons { justify-content: center;   position: relative;
+      z-index: 1;
+    }
       .steps { grid-template-columns: 1fr; gap: 24px; }
       .install-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -520,36 +531,29 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">
-        <span>v0.1.0</span> Now available for Windows and macOS
-      </div>
-      <h1>A modern <span class="highlight">tape reading</span><br>practice tool</h1>
-      <p class="hero-sub">
-        Replay real market data tick-by-tick with sub-16ms latency. A fast, modern replacement for legacy trading platforms &mdash; free, offline, no account needed.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://github.com/deepentropy/volttrading-replay/releases/download/v0.1.0/VoltTrading_0.1.0_x64_en-US.msi" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.5L9.9 2.1v9.6H0V3.5zm0 16.9l9.9 1.4v-9.5H0v8.1zM11 1.8L24 0v11.7H11V1.8zM11 12.3H24V24L11 22.2V12.3z"/></svg>
-          Windows (.msi)
-        </a>
-        <a href="https://github.com/deepentropy/volttrading-replay/releases/download/v0.1.0/VoltTrading_0.1.0_universal.dmg" class="btn btn-secondary">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          macOS (.dmg)
-        </a>
-      </div>
-      <p class="hero-meta">5.5 MB &middot; No signup</p>
-    </div>
-  </section>
-
-  <!-- Screenshot -->
-  <section class="screenshot-section">
-    <div class="container">
-      <div class="screenshot-frame">
-        <div class="screenshot-placeholder">
-          <div style="text-align: center;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--text-muted); margin-bottom: 12px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
-            <p>App screenshot coming soon</p>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span>v0.1.0</span> Now available for Windows and macOS
           </div>
+          <h1>A modern <span class="highlight">tape reading</span><br>practice tool</h1>
+          <p class="hero-sub">
+            Replay real market data tick-by-tick with sub-16ms latency. A fast, modern replacement for legacy trading platforms &mdash; free, offline, no account needed.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://github.com/deepentropy/volttrading-replay/releases/download/v0.1.0/VoltTrading_0.1.0_x64_en-US.msi" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.5L9.9 2.1v9.6H0V3.5zm0 16.9l9.9 1.4v-9.5H0v8.1zM11 1.8L24 0v11.7H11V1.8zM11 12.3H24V24L11 22.2V12.3z"/></svg>
+              Windows (.msi)
+            </a>
+            <a href="https://github.com/deepentropy/volttrading-replay/releases/download/v0.1.0/VoltTrading_0.1.0_universal.dmg" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              macOS (.dmg)
+            </a>
+          </div>
+          <p class="hero-meta">5.5 MB &middot; No signup</p>
+        </div>
+        <div class="hero-screenshot">
+          <img src="images/hero-screenshot.png" alt="VoltTrading &mdash; DOM, Chart, Time &amp; Sales, Order Entry" loading="eager">
         </div>
       </div>
     </div>
@@ -569,6 +573,7 @@
           </div>
           <h3>Modern UI, Sub-16ms Latency</h3>
           <p>Built with Rust and GPU-accelerated rendering. DOM ladder, time &amp; sales, and charts all update in under 16ms &mdash; faster than legacy platforms.</p>
+          <div class="feature-img"><img src="images/orderbook.png" alt="Order Book / DOM Ladder" loading="lazy"></div>
         </div>
         <div class="feature-card">
           <div class="feature-icon green">
@@ -583,6 +588,7 @@
           </div>
           <h3>Time & Sales</h3>
           <p>Full tick-by-tick trade stream color-coded by side. See exactly when large prints hit the tape and at what price levels.</p>
+          <div class="feature-img"><img src="images/timeandsales.png" alt="Time and Sales" loading="lazy"></div>
         </div>
         <div class="feature-card">
           <div class="feature-icon blue">
@@ -597,6 +603,7 @@
           </div>
           <h3>Click-to-Trade Simulation</h3>
           <p>Place limit and market orders by clicking the DOM. Track your P&L, positions, and order fills as if it were live &mdash; with zero risk.</p>
+          <div class="feature-img"><img src="images/order-history.png" alt="Order History and Fills" loading="lazy"></div>
         </div>
         <div class="feature-card">
           <div class="feature-icon red">
@@ -604,6 +611,7 @@
           </div>
           <h3>In-App Session Downloads</h3>
           <p>Browse and download curated replay sessions of volatile small-cap tickers directly from the app. New sessions added regularly.</p>
+          <div class="feature-img"><img src="images/sessions-modal.png" alt="Session Catalog" loading="lazy"></div>
         </div>
       </div>
     </div>
